@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owen Smith Bentil</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        #profile-image {
+            max-width: 200px;
+            margin: 20px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #777;
+        }
+        #myTrack {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-testid="slackUserName"></h1>
+    <img src="https://github.com/skiosmith/the-first-repo/blob/main/me.PNG?raw=true.jpg" alt="osbentil" id="profile-image" data-testid="slackDisplayImage">
+    <p data-testid="currentDayOfTheWeek"></p>
+    <p data-testid="currentUTCTime"></p>
+    <p id="myTrack" data-testid="myTrack">My track: Frontend</p>
+
+
+    <a href="https://github.com/skiosmith/the-first-repo" target="_blank" data-testid="githubURL">My GitHub Repository</a>
+
+
+    <script>
+        // JavaScript for displaying the current day of the week and UTC time
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const currentDay = new Date().getDay();
+        const currentDayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+        currentDayElement.textContent = `Current Day of the Week: ${daysOfWeek[currentDay]}`;
+
+        const currentUTCTime = new Date().toUTCString();
+        const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+        currentUTCTimeElement.textContent = `Current UTC Time: ${currentUTCTime}`;
+    </script>
+</body>
+</html>
